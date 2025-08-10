@@ -17,19 +17,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Generate resources folder
+        run: mkdir -p ./src/main/resources
+
       - name: Make application.yml  # application.yml 파일 생성
-        run: |
-          cd ./src/main/resources
-          echo "${{ secrets.APPLICATION_YML }}" > ./application.yml
-        shell: bash
+        run: echo "${{ secrets.APPLICATION_DEV }}" > ./src/main/resources/application.yml
 
       - name: Grant execute permission for gradlew  # gradlew 실행 권한 부여
         run: chmod +x gradlew
 
-      - name: Build with Gradle  # Gradle을 사용하여 프로젝트 빌드
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: build
+      - name: Build with Gradle
+        run: ./gradlew build -x test
 
       - name: Upload build artifact  # 빌드된 아티팩트 업로드
         uses: actions/upload-artifact@v4
