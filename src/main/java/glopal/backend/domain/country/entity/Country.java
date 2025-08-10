@@ -1,6 +1,6 @@
-package domain.country.entity;
+package glopal.backend.domain.country.entity;
 
-import domain.user.entity.User;
+import glopal.backend.domain.user.entity.User;
 import glopal.backend.global.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
