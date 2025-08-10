@@ -1,6 +1,6 @@
-package domain.spending.entity;
+package glopal.backend.domain.spending.entity;
 
-import domain.transaction.entity.Transaction;
+import glopal.backend.domain.transaction.entity.Transaction;
 import glopal.backend.global.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

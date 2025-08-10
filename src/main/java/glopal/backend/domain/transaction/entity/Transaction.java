@@ -1,8 +1,8 @@
-package domain.transaction.entity;
+package glopal.backend.domain.transaction.entity;
 
-import domain.card.entity.Card;
-import domain.country.entity.Country;
-import domain.transaction.entity.enums.Category;
+import glopal.backend.domain.card.entity.Card;
+import glopal.backend.domain.country.entity.Country;
+import glopal.backend.domain.transaction.entity.enums.Category;
 import glopal.backend.global.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

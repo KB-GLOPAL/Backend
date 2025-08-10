@@ -1,8 +1,8 @@
-package domain.card.entity;
+package glopal.backend.domain.card.entity;
 
-import domain.card.entity.enums.CardBrand;
-import domain.card.entity.enums.CardType;
-import domain.user.entity.User;
+import glopal.backend.domain.card.entity.enums.CardBrand;
+import glopal.backend.domain.card.entity.enums.CardType;
+import glopal.backend.domain.user.entity.User;
 import glopal.backend.global.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

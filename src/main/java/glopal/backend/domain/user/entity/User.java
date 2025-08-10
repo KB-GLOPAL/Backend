@@ -1,4 +1,4 @@
-package domain.user.entity;
+package glopal.backend.domain.user.entity;
 
 import glopal.backend.global.common.domain.BaseEntity;
 import jakarta.persistence.*;
