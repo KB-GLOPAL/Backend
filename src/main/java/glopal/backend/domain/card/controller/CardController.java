@@ -17,8 +17,8 @@ public class CardController {
     private final CardCommandService cardCommandService;
 
     @Operation(
-            summary = "일반 회원가입 API",
-            description = "사용자가 일반 회원가입을 합니다."
+            summary = "카드 등록 API",
+            description = "사용자가 보유한 카드를 등록합니다."
     )
     @PostMapping
     public ApiResponse<CardResponse.CardInfo> createCard(@RequestBody @Valid CardRequest.CreateCard createCard){
