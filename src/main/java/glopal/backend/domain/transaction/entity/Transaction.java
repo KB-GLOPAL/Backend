@@ -19,6 +19,9 @@ public class Transaction extends BaseEntity {
     @Column(name = "transaction_id")
     private Long id;
 
+    @Column(name = "transaction_place", nullable = false)
+    private String transactionPlace;
+
     @Column(name = "amount_local", nullable = false)
     private Double amountLocal;
 
