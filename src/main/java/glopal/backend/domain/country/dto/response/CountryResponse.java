@@ -9,7 +9,6 @@ public class CountryResponse {
     @AllArgsConstructor(access = AccessLevel.PROTECTED)
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class CountryInfo {
-        private Long countryId;
         private String countryName;
     }
 }
