@@ -5,6 +5,7 @@ import glopal.backend.domain.transaction.dto.response.TransactionResponse;
 import glopal.backend.domain.transaction.service.TransactionCommandService;
 import glopal.backend.domain.transaction.service.TransactionQueryService;
 import glopal.backend.global.apiPayload.ApiResponse;
+import glopal.backend.global.handler.annotation.Auth;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,16 @@ public class TransactionController {
     public ApiResponse<TransactionResponse.TransactionInfo> createTransaction(@RequestBody @Valid TransactionRequest.CreateTransaction createTransaction){
         TransactionResponse.TransactionInfo transactionInfo = transactionCommandService.createTransaction(createTransaction);
         return ApiResponse.onSuccess(transactionInfo);
+    }
+
+    @Operation(
+            summary = "전체 결제 내역 조회 API",
+            description = "전체 결제 내역을 조회합니다."
+    )
+    @GetMapping
+    public ApiResponse<TransactionResponse.TransactionList> getTransactionList(@Auth Long userId){
+        TransactionResponse.TransactionList transactionList = transactionQueryService.getTransactionList(userId);
+        return ApiResponse.onSuccess(transactionList);
     }
 
     @Operation(
