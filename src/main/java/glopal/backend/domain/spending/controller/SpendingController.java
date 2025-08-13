@@ -19,10 +19,20 @@ public class SpendingController {
     private final SpendingQueryService spendingQueryService;
 
     @Operation(
+            summary = "소비 비율 조회 API",
+            description = "여행하는 동안 사용한 소비의 카테고리별 비율을 조회합니다."
+    )
+    @GetMapping("/ratio")
+    public ApiResponse<SpendingResponse.SpendingRatio> getSpendingRatio(@Auth Long userId) {
+        SpendingResponse.SpendingRatio spendingRatio = spendingQueryService.getSpendingRatio(userId);
+        return ApiResponse.onSuccess(spendingRatio);
+    }
+
+    @Operation(
             summary = "절약한 금액 조회 API",
             description = "여행 기간동안 절약한 금액을 조회합니다."
     )
-    @GetMapping
+    @GetMapping("/saved")
     public ApiResponse<SpendingResponse.SavedPrice> getSavedPrice(@Auth Long userId) {
         SpendingResponse.SavedPrice savedPrice = spendingQueryService.getSavedPrice(userId);
         return ApiResponse.onSuccess(savedPrice);

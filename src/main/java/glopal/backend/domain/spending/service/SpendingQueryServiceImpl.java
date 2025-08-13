@@ -11,6 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class SpendingQueryServiceImpl implements SpendingQueryService {
 
     @Override
+    public SpendingResponse.SpendingRatio getSpendingRatio(Long userId) {
+        return null;
+    }
+
+    @Override
     public SpendingResponse.SavedPrice getSavedPrice(Long userId) {
         return null;
     }
