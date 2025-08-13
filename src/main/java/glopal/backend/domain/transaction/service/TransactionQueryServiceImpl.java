@@ -11,6 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class TransactionQueryServiceImpl implements TransactionQueryService {
 
     @Override
+    public TransactionResponse.TransactionList getTransactionList(Long userId) {
+        return null;
+    }
+
+    @Override
     public TransactionResponse.BestCardInfo getBestCardInfo(Long cardId) {
         return null;
     }
